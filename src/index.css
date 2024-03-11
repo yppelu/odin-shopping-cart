@@ -60,8 +60,23 @@ h6 {
   overflow-wrap: break-word;
 }
 
+:root {
+  --body-background-color: #151515;
+  --transition-time: 0.15s;
+  --transition-type: ease-in-out;
+}
+
 body {
+  background-color: var(--body-background-color);
+  color: #FFFFFF;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
+}
+
+#root {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  width: 100%;
 }
