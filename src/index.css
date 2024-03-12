@@ -72,11 +72,16 @@ body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
+
+  display: flex;
+  justify-content: center;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 #root {
-  margin-left: auto;
-  margin-right: auto;
+  padding: 1rem;
   max-width: 1200px;
   width: 100%;
 }
