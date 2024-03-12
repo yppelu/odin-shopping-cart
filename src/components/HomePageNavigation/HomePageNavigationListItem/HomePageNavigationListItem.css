@@ -1,0 +1,36 @@
+.home-page__navigation-list-item {
+  width: 100%;
+}
+
+.home-page__navigation-link {
+  background-color: #FFFFFF;
+  border-radius: 1rem;
+  color: #000000;
+  transition:
+    transform var(--transition-duration) var(--transition-type),
+    background-color var(--transition-duration) var(--transition-type);
+
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.5rem 0.5rem;
+  width: 100%;
+}
+
+.home-page__navigation-link:focus {
+  background-color: #6ABEBB;
+  outline: none;
+  transform: scale(1.05);
+}
+
+.home-page__navigation-link-icon {
+  height: calc(1rem * 1.5);
+}
+
+@media (hover: hover) {
+  .home-page__navigation-link:hover {
+    background-color: #6ABEBB;
+    transform: scale(1.05);
+  }
+}

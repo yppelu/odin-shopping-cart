@@ -1,9 +1,12 @@
-import HomePageNavigation from '../../components/HomePageNavigation/HomePageNavigation';
 import './HomePage.css';
 
+import HomePageNavigation from '../../components/HomePageNavigation/HomePageNavigation';
+
 export default function HomePage() {
+  document.title = 'Home | Game Database';
+
   return (
-    <div className='home-page'>
+    <main className='home-page'>
       <div className='home-page__info'>
         <div className='home-page__description-container'>
           <h1 className='home-page__title'>Game Database</h1>
@@ -25,6 +28,6 @@ export default function HomePage() {
         </div>
       </div>
       <HomePageNavigation />
-    </div>
+    </main>
   );
 }
