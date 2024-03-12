@@ -18,12 +18,6 @@
   width: 100%;
 }
 
-.home-page__navigation-link:focus {
-  background-color: #6ABEBB;
-  outline: none;
-  transform: scale(1.05);
-}
-
 .home-page__navigation-link-icon {
   height: calc(1rem * 1.5);
 }

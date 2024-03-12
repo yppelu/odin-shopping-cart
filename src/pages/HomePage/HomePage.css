@@ -57,12 +57,6 @@
   padding: 0.25rem 0.5rem;
 }
 
-.home-page__link-to-my-source:focus {
-  background-color: #6ABEBB;
-  outline: none;
-  transform: scale(1.05);
-}
-
 .home-page__link-to-my-source-icon {
   height: calc(1rem * 1.5);
 }

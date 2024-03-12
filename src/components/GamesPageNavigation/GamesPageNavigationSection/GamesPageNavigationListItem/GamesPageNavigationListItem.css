@@ -39,14 +39,6 @@
   fill: #000000;
 }
 
-.games-page__navigation-button:focus .games-page__navigation-icon-wrapper {
-  background-color: #FFFFFF;
-}
-
-.games-page__navigation-button:focus .games-page__navigation-icon {
-  fill: #000000;
-}
-
 @media (hover: hover) {
   .games-page__navigation-button:hover .games-page__navigation-icon-wrapper {
     background-color: #FFFFFF;
