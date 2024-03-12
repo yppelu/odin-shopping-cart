@@ -38,7 +38,7 @@
   box-shadow: 0 0 1rem -0.5rem #FFFFFF;
   color: #000000;
   font-size: 1.25rem;
-  transition: background-color var(--transition-time) var(--transition-type);
+  transition: background-color var(--transition-duration) var(--transition-type);
 
   display: flex;
   align-items: center;

@@ -62,7 +62,8 @@ h6 {
 
 :root {
   --body-background-color: #151515;
-  --transition-time: 0.15s;
+  --secondary-background-color: #202020;
+  --transition-duration: 0.15s;
   --transition-type: ease-in-out;
 }
 
@@ -81,6 +82,10 @@ body {
 }
 
 #root {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
   padding: 1rem;
   max-width: 1200px;
   width: 100%;

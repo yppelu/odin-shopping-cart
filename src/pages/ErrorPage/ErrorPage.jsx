@@ -10,7 +10,7 @@ export default function ErrorPage() {
         <p className='error-page__description'>
           Whoops!<br />We couldn&apos;t find that page.
         </p>
-        <Link className='error-page__return-link' to='/'>Main page</Link>
+        <Link className='error-page__return-link' to='/'>Home page</Link>
       </div>
     </>
   );
