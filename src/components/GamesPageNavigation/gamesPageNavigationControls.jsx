@@ -63,7 +63,7 @@ export const gamesPageNavigationControls = [
           </svg>
       },
       {
-        title: 'All Time Top',
+        title: 'All Time Top 250',
         icon:
           <svg
             className='games-page__navigation-icon'

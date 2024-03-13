@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import './GamesPageNavigationSection.css';
 
-import GamesPageNavigationListItem from './GamesPageNavigationListItem/GamesPageNavigationListItem';
+import GamesPageNavigationListItem from './GamesPageNavigationListItem/GamesPageNavigationListItem.jsx';
 
 export default function GamesPageNavigationSection({ title, listItems }) {
   return (

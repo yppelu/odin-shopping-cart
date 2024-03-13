@@ -1,0 +1,22 @@
+.games-page__game-card {
+  background-color: var(--secondary-background-color);
+  border-radius: 1rem;
+  overflow: hidden;
+
+  width: 100%;
+}
+
+.games-page__game-card-image {
+  object-fit: cover;
+  height: 150px;
+  width: 100%;
+}
+
+.games-page__game-card-description {
+  padding: 1rem;
+}
+
+.games-page__game-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}

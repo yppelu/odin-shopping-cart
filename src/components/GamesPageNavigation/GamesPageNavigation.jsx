@@ -1,7 +1,7 @@
 import './GamesPageNavigation.css';
 
 import { gamesPageNavigationControls } from './gamesPageNavigationControls.jsx';
-import GamesPageNavigationSection from './GamesPageNavigationSection/GamesPageNavigationSection';
+import GamesPageNavigationSection from './GamesPageNavigationSection/GamesPageNavigationSection.jsx';
 
 export default function GamesPageNavigation() {
   return (

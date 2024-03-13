@@ -5,6 +5,7 @@ import HomePage from '../pages/HomePage/HomePage.jsx';
 import ErrorPage from '../pages/ErrorPage/ErrorPage.jsx';
 import CartPage from '../pages/CartPage/CartPage.jsx';
 import GamesPage from '../pages/GamesPage/GamesPage.jsx';
+import GamesPageMainSection from './GamesPageMainSection/GamesPageMainSection.jsx';
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -23,7 +24,13 @@ export default function Router() {
         },
         {
           path: '/games',
-          element: <GamesPage />
+          element: <GamesPage />,
+          children: [
+            {
+              path: '/games/:sectionName',
+              element: <GamesPageMainSection />
+            }
+          ]
         }
       ]
     }

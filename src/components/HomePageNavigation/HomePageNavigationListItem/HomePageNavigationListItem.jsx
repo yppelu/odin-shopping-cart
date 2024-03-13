@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './HomePageNavigationListItem.css';
 
 export default function HomePageNavigationListItem({ title, icon }) {
+  const href = title.split(' ').map(word => word.toLowerCase()).join('-');
+
   return (
     <li className='home-page__navigation-list-item'>
-      <a className='home-page__navigation-link' href=''>
+      <Link className='home-page__navigation-link' to={`/games/${href}`}>
         {icon}
         {title}
-      </a>
+      </Link>
     </li>
   );
 }
