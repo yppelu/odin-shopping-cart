@@ -1,8 +1,8 @@
-import useFetchGames from '../../useFetchGames.jsx';
+import useFetchGames from '../useFetchGames.jsx';
 
-import GamesPageCard from '../../GamesPageCard/GamesPageCard.jsx';
-import LoadingIndicator from '../../../LoadingIndicator/LoadingIndicator.jsx';
-import ErrorWhileLoading from '../ErrorWhileLoading.jsx';
+import GamesPageCard from '../GamesPageCard/GamesPageCard.jsx';
+import LoadingIndicator from '../../LoadingIndicator/LoadingIndicator.jsx';
+import ErrorWhileLoading from './ErrorWhileLoading.jsx';
 
 export default function Last30DaysSection() {
   const { listOfGames, isLoading, isError } = useFetchGames({
@@ -23,7 +23,7 @@ export default function Last30DaysSection() {
             {
               listOfGames.map(game => (
                 !game.background_image ? null :
-                  <GamesPageCard key={game.id} imageSrc={game.background_image} name={game.name} />
+                  <GamesPageCard key={game.id} imageSrc={game.background_image} name={game.name} platforms={game.platforms.map(el => el.platform.name)} />
               ))
             }
           </div>

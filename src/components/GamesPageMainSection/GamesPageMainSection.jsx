@@ -2,12 +2,12 @@ import { useParams } from 'react-router-dom';
 
 import './GamesPageMainSection.css';
 
-import Last30DaysSection from './sections/Last30DaysSection/Last30DaysSection.jsx';
-import ThisWeekSection from './sections/ThisWeekSection/ThisWeekSection.jsx';
-import NextWeekSection from './sections/NextWeekSection/NextWeekSection.jsx';
-import BestOfTheYearSection from './sections/BestOfTheYearSection/BestOfTheYearSection.jsx';
-import PopularIn2023Section from './sections/PopularIn2023Section/PopularIn2023Section.jsx';
-import AllTimeTopSection from './sections/AllTimeTopSection/AllTimeTopSection.jsx';
+import Last30DaysSection from './sections/Last30DaysSection.jsx';
+import ThisWeekSection from './sections/ThisWeekSection.jsx';
+import NextWeekSection from './sections/NextWeekSection.jsx';
+import BestOfTheYearSection from './sections/BestOfTheYearSection.jsx';
+import PopularIn2023Section from './sections/PopularIn2023Section.jsx';
+import AllTimeTopSection from './sections/AllTimeTopSection.jsx';
 
 export default function GamesPageMainSection() {
   const { sectionName } = useParams();

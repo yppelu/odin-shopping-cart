@@ -13,6 +13,9 @@
 }
 
 .games-page__game-card-description {
+  display: flex;
+  flex-direction: column;
+
   padding: 1rem;
 }
 
