@@ -1,7 +1,13 @@
 .games-page {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
 
   margin-top: 1rem;
+}
+
+@media (min-width: 601px) {
+  .games-page {
+    grid-template-columns: max-content 1fr;
+  }
 }

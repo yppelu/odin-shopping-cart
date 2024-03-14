@@ -1,7 +1,48 @@
 .games-page__navigation {
+  background-color: var(--secondary-background-color);
+  border-radius: 1rem;
+
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 
-  padding-top: 1rem;
+  position: fixed;
+  top: 2rem;
+
+  padding: 1rem;
+}
+
+.games-page__navigation-button {
+  background: transparent;
+
+  border: none;
+  margin-bottom: -1rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+.games-page__navigation-button>svg {
+  fill: #FFFFFF;
+  height: 100%;
+}
+
+.games-page__navigation--hidden {
+  visibility: hidden;
+}
+
+.games-page__navigation-button--menu-hidden {
+  visibility: visible;
+}
+
+@media (min-width: 601px) {
+  .games-page__navigation {
+    background-color: var(--body-background-color);
+    position: static;
+
+    padding: 1rem 0 0 0;
+  }
+
+  .games-page__navigation-button {
+    display: none;
+  }
 }
