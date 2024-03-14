@@ -5,7 +5,7 @@ import { gamesPageNavigationControls } from './gamesPageNavigationControls.jsx';
 import GamesPageNavigationSection from './GamesPageNavigationSection/GamesPageNavigationSection.jsx';
 
 export default function GamesPageNavigation() {
-  const [isMenuHidden, setIsMenuHidden] = useState(false);
+  const [isMenuHidden, setIsMenuHidden] = useState(window.screen.width <= 600);
   return (
     <nav
       className={

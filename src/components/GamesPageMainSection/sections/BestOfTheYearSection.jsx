@@ -1,10 +1,13 @@
+import PropTypes from 'prop-types';
+
 import useFetchGames from '../useFetchGames.jsx';
 
 import GamesPageCard from '../GamesPageCard/GamesPageCard.jsx';
 import LoadingIndicator from '../../LoadingIndicator/LoadingIndicator.jsx';
 import ErrorWhileLoading from './ErrorWhileLoading.jsx';
+import getGamePrice from './getGamePrice.js';
 
-export default function BestOfTheYearSection() {
+export default function BestOfTheYearSection({ gamesInCart, addGameToCart, removeGameFromCart }) {
   const { listOfGames, isLoading, isError } = useFetchGames({
     startDate: new Date().getFullYear() + '-01' + '-01',
     endDate: new Date().toISOString().slice(0, 10),
@@ -26,7 +29,17 @@ export default function BestOfTheYearSection() {
             {
               listOfGames.map(game => (
                 !game.background_image ? null :
-                  <GamesPageCard key={game.id} imageSrc={game.background_image} name={game.name} platforms={game.platforms.map(el => el.platform.slug)} />
+                  <GamesPageCard
+                    key={game.id}
+                    id={game.id}
+                    imageSrc={game.background_image}
+                    name={game.name}
+                    platforms={game.platforms.map(el => el.platform.slug)}
+                    price={getGamePrice(game.slug)}
+                    gamesInCart={gamesInCart}
+                    addGameToCart={addGameToCart}
+                    removeGameFromCart={removeGameFromCart}
+                  />
               ))
             }
           </div>
@@ -34,3 +47,9 @@ export default function BestOfTheYearSection() {
     </>
   );
 }
+
+BestOfTheYearSection.propTypes = {
+  addGameToCart: PropTypes.func,
+  removeGameFromCart: PropTypes.func,
+  gamesInCart: PropTypes.array
+};

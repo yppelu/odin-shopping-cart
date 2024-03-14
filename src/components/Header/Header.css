@@ -45,11 +45,31 @@
 
 .header__view-cart-link {
   transition: transform var(--transition-duration) var(--transition-type);
+  position: relative;
   height: calc(1.5rem);
 }
 
 .header__view-cart-link-icon {
   height: 100%;
+}
+
+.header__number-of-games-in-cart {
+  background-color: var(--accent-color);
+  border-radius: 1rem;
+  color: #000000;
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+
+  height: 1.15rem;
+  width: 1.15rem;
 }
 
 @media (min-width: 750px) {

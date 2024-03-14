@@ -44,7 +44,7 @@ export const homePageNavigationButtons = [
       </svg>
   },
   {
-    title: 'All Time Top 250',
+    title: 'All Time Top',
     icon:
       <svg
         className='home-page__navigation-link-icon'

@@ -63,6 +63,7 @@ h6 {
 :root {
   --body-background-color: #151515;
   --secondary-background-color: #202020;
+  --accent-color: #6ABEBB;
   --transition-duration: 0.15s;
   --transition-type: ease-in-out;
 }

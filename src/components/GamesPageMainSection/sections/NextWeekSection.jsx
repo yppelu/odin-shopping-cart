@@ -1,10 +1,13 @@
+import PropTypes from 'prop-types';
+
 import useFetchGames from '../useFetchGames.jsx';
 
 import GamesPageCard from '../GamesPageCard/GamesPageCard.jsx';
 import LoadingIndicator from '../../LoadingIndicator/LoadingIndicator.jsx';
 import ErrorWhileLoading from './ErrorWhileLoading.jsx';
+import getGamePrice from './getGamePrice.js';
 
-export default function NextWeekSection() {
+export default function NextWeekSection({ addGameToCart, removeGameFromCart, gamesInCart }) {
   const { listOfGames, isLoading, isError } = useFetchGames({
     startDate: getStartOfNextWeekDate().toISOString().slice(0, 10),
     endDate: getEndOfNextWeekDate().toISOString().slice(0, 10)
@@ -23,7 +26,17 @@ export default function NextWeekSection() {
             {
               listOfGames.map(game => (
                 !game.background_image ? null :
-                  <GamesPageCard key={game.id} imageSrc={game.background_image} name={game.name} platforms={game.platforms.map(el => el.platform.slug)} />
+                  <GamesPageCard
+                    key={game.id}
+                    id={game.id}
+                    imageSrc={game.background_image}
+                    name={game.name}
+                    platforms={game.platforms.map(el => el.platform.slug)}
+                    price={getGamePrice(game.slug)}
+                    gamesInCart={gamesInCart}
+                    addGameToCart={addGameToCart}
+                    removeGameFromCart={removeGameFromCart}
+                  />
               ))
             }
           </div>
@@ -55,3 +68,9 @@ function getEndOfNextWeekDate() {
   }
   return date;
 }
+
+NextWeekSection.propTypes = {
+  addGameToCart: PropTypes.func,
+  removeGameFromCart: PropTypes.func,
+  gamesInCart: PropTypes.array
+};

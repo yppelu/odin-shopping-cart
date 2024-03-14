@@ -1,6 +1,7 @@
 .games-page__navigation {
   background-color: var(--secondary-background-color);
   border-radius: 1rem;
+  overflow: auto;
 
   display: flex;
   flex-direction: column;
@@ -8,6 +9,7 @@
 
   position: fixed;
   top: 2rem;
+  bottom: 2rem;
 
   padding: 1rem;
 }

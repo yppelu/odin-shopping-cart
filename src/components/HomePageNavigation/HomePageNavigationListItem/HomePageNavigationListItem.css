@@ -24,7 +24,7 @@
 
 @media (hover: hover) {
   .home-page__navigation-link:hover {
-    background-color: #6ABEBB;
+    background-color: var(--accent-color);
     transform: scale(1.05);
   }
 }

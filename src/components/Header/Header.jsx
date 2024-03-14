@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import './Header.css';
 
-export default function Header() {
+export default function Header({ numberOfGamesInCart }) {
   return (
     <header className='header'>
       <Link className='header__home-link' to='/'>
@@ -20,6 +21,13 @@ export default function Header() {
       </Link>
       <input className='header__search-input' placeholder='Search games...' />
       <Link className='header__view-cart-link' to='/cart'>
+        {
+          numberOfGamesInCart > 0
+            ? <span className='header__number-of-games-in-cart' title='Number of items in the cart'>
+              {numberOfGamesInCart}
+            </span>
+            : null
+        }
         <svg
           className='header__view-cart-link-icon'
           aria-label='View cart'
@@ -33,3 +41,7 @@ export default function Header() {
     </header>
   );
 }
+
+Header.propTypes = {
+  numberOfGamesInCart: PropTypes.number
+};

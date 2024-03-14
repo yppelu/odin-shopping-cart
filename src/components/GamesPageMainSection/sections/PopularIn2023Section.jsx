@@ -1,10 +1,13 @@
+import PropTypes from 'prop-types';
+
 import useFetchGames from '../useFetchGames.jsx';
 
 import GamesPageCard from '../GamesPageCard/GamesPageCard.jsx';
 import LoadingIndicator from '../../LoadingIndicator/LoadingIndicator.jsx';
 import ErrorWhileLoading from './ErrorWhileLoading.jsx';
+import getGamePrice from './getGamePrice.js';
 
-export default function PopularIn2023Section() {
+export default function PopularIn2023Section({ addGameToCart, removeGameFromCart, gamesInCart }) {
   const { listOfGames, isLoading, isError } = useFetchGames({
     startDate: '2023-01-01',
     endDate: '2023-12-31',
@@ -24,7 +27,17 @@ export default function PopularIn2023Section() {
           {
             listOfGames.map(game => (
               !game.background_image ? null :
-                <GamesPageCard key={game.id} imageSrc={game.background_image} name={game.name} platforms={game.platforms.map(el => el.platform.slug)} />
+                <GamesPageCard
+                  key={game.id}
+                  id={game.id}
+                  imageSrc={game.background_image}
+                  name={game.name}
+                  platforms={game.platforms.map(el => el.platform.slug)}
+                  price={getGamePrice(game.slug)}
+                  gamesInCart={gamesInCart}
+                  addGameToCart={addGameToCart}
+                  removeGameFromCart={removeGameFromCart}
+                />
             ))
           }
         </div>
@@ -35,3 +48,9 @@ export default function PopularIn2023Section() {
     </>
   );
 }
+
+PopularIn2023Section.propTypes = {
+  addGameToCart: PropTypes.func,
+  removeGameFromCart: PropTypes.func,
+  gamesInCart: PropTypes.array
+};
