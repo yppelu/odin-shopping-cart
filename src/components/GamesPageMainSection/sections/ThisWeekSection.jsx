@@ -23,7 +23,7 @@ export default function ThisWeekSection() {
             {
               listOfGames.map(game => (
                 !game.background_image ? null :
-                  <GamesPageCard key={game.id} imageSrc={game.background_image} name={game.name} platforms={game.platforms.map(el => el.platform.name)} />
+                  <GamesPageCard key={game.id} imageSrc={game.background_image} name={game.name} platforms={game.platforms.map(el => el.platform.slug)} />
               ))
             }
           </div>

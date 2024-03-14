@@ -23,3 +23,16 @@
   font-size: 1.25rem;
   font-weight: 700;
 }
+
+.games-page__game-card-platforms-container {
+  display: flex;
+  gap: 0.25rem;
+
+  margin-bottom: 0.5rem;
+  height: 1rem;
+}
+
+.games-page__game-card-platform-icon {
+  fill: #FFFFFF;
+  height: 100%;
+}

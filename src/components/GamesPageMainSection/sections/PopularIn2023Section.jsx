@@ -17,14 +17,14 @@ export default function PopularIn2023Section() {
 
   return (
     <>
-      <h1 className='games-page__content-title'>Popular In 2023</h1>
+      <h1 className='games-page__content-title'>Popular in 2023</h1>
       {
         !isLoading &&
         <div className='games-page__games-grid'>
           {
             listOfGames.map(game => (
               !game.background_image ? null :
-                <GamesPageCard key={game.id} imageSrc={game.background_image} name={game.name} platforms={game.platforms.map(el => el.platform.name)} />
+                <GamesPageCard key={game.id} imageSrc={game.background_image} name={game.name} platforms={game.platforms.map(el => el.platform.slug)} />
             ))
           }
         </div>

@@ -1,7 +1,7 @@
 import './HomePageNavigation.css';
 
 import { homePageNavigationButtons } from './homePageNavigationButtons.jsx';
-import HomePageNavigationListItem from './HomePageNavigationListItem/HomePageNavigationListItem';
+import HomePageNavigationListItem from './HomePageNavigationListItem/HomePageNavigationListItem.jsx';
 
 export default function HomePageNavigation() {
   return (
