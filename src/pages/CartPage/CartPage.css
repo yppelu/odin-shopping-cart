@@ -25,51 +25,6 @@
   gap: 1rem;
 }
 
-.cart__game-card {
-  background-color: var(--secondary-background-color);
-  border-radius: 1rem;
-  overflow: hidden;
-
-  display: flex;
-  gap: 1rem;
-
-  padding: 1rem;
-}
-
-.cart__game-card-image {
-  border-radius: 1rem;
-  object-fit: cover;
-  width: 45%;
-}
-
-.cart__game-card-description {
-  display: flex;
-  flex-direction: column;
-
-  width: 55%;
-}
-
-.cart__remove-game-from-cart-button {
-  background-color: var(--body-background-color);
-  border-radius: 2rem;
-  color: #FFFFFF;
-
-  align-self: flex-start;
-
-  aspect-ratio: 1 / 1;
-  border: none;
-  width: 2rem;
-}
-
-.cart__game-card-name {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.cart__game-card-price {
-  color: #A4A4A4;
-}
-
 .cart__total-block {
   background-color: var(--secondary-background-color);
   border-radius: 1rem;

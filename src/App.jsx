@@ -19,10 +19,14 @@ export default function App() {
     setGamesInCart(newGamesInCart);
   }
 
+  function handleClearCart() {
+    setGamesInCart([]);
+  }
+
   return (
     <>
       <Header numberOfGamesInCart={gamesInCart.length} />
-      <Outlet context={{ handleAddGameToCart, handleRemoveGameFromCart, gamesInCart }} />
+      <Outlet context={{ handleAddGameToCart, handleRemoveGameFromCart, handleClearCart, gamesInCart }} />
     </>
   );
 }

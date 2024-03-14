@@ -1,15 +1,16 @@
-import { useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import './CartPage.css';
 
 import getGamePrice from '../../components/GamesPageMainSection/sections/getGamePrice.js';
 import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator.jsx';
+import CartGameCart from './CartGameCart/CartGameCart.jsx';
 
 export default function CartPage() {
   document.title = 'Cart | Game Database';
 
-  const { gamesInCart, handleRemoveGameFromCart } = useOutletContext();
+  const { gamesInCart, handleRemoveGameFromCart, handleClearCart } = useOutletContext();
   const [games, setGames] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -51,46 +52,47 @@ export default function CartPage() {
     );
   }
 
+  if (isLoading) {
+    return (
+      <main className='cart'>
+        <h1 className='cart__title'>
+          {`Your Cart (${gamesInCart.length} ${gamesInCart.length === 1 ? 'game' : 'games'})`}
+        </h1>
+        <div className='cart__body'><LoadingIndicator /></div>
+      </main>
+    );
+  }
+
   return (
     <main className='cart'>
       <h1 className='cart__title'>
         {`Your Cart (${gamesInCart.length} ${gamesInCart.length === 1 ? 'game' : 'games'})`}
       </h1>
       <div className='cart__body'>
-        {isLoading && <LoadingIndicator />}
         {
           games.length < 1 ? null :
             <div className='cart__total-block'>
-              <p>
-                {
-                  'Total: $' + games.reduce((sum, game) => sum + Number(game.price), 0).toFixed(2)
-                }
-              </p>
-              <button className='cart__checkout-button' type='button'>
+              <p>Total: ${games.reduce((sum, game) => sum + +game.price, 0).toFixed(2)}</p>
+              <Link
+                className='cart__checkout-button'
+                onClick={handleClearCart}
+                to='/checkout'
+              >
                 Checkout
-              </button>
+              </Link>
             </div>
         }
         <div className='cart__games-cards-container'>
           {
             games.map(game => (
-              <div className='cart__game-card' key={game.id}>
-                <img className='cart__game-card-image' src={game.imageSrc} alt='' aria-hidden />
-                <div className='cart__game-card-description'>
-                  <p className='cart__game-card-name'>{game.name}</p>
-                  <p className='cart__game-card-price'>${game.price}</p>
-                </div>
-                <button
-                  className='cart__remove-game-from-cart-button'
-                  type='button'
-                  aria-label='Remove from cart'
-                  onClick={() => {
-                    handleRemoveGameFromCart(game.id);
-                  }}
-                >
-                  X
-                </button>
-              </div>
+              <CartGameCart
+                key={game.id}
+                id={game.id}
+                imageSrc={game.imageSrc}
+                name={game.name}
+                price={game.price}
+                removeGameFromCart={handleRemoveGameFromCart}
+              />
             ))
           }
         </div>

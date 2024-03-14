@@ -4,6 +4,7 @@ import App from '../App.jsx';
 import HomePage from '../pages/HomePage/HomePage.jsx';
 import ErrorPage from '../pages/ErrorPage/ErrorPage.jsx';
 import CartPage from '../pages/CartPage/CartPage.jsx';
+import CheckoutPage from '../pages/CheckoutPage/CheckoutPage.jsx';
 import GamesPage from '../pages/GamesPage/GamesPage.jsx';
 import GamesPageMainSection from './GamesPageMainSection/GamesPageMainSection.jsx';
 
@@ -21,6 +22,10 @@ export default function Router() {
         {
           path: '/cart',
           element: <CartPage />
+        },
+        {
+          path: '/checkout',
+          element: <CheckoutPage />
         },
         {
           path: '/games',
