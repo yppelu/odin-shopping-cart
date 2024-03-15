@@ -4,15 +4,20 @@
   overflow: hidden;
 
   display: flex;
+  align-items: flex-start;
   gap: 1rem;
 
   padding: 1rem;
 }
 
-.cart__game-card-image {
+.cart__game-card-image-link {
+  overflow: hidden;
   border-radius: 1rem;
-  object-fit: cover;
   width: 45%;
+}
+
+.cart__game-card-image {
+  object-fit: cover;
 }
 
 .cart__game-card-description {
@@ -41,4 +46,10 @@
 
 .cart__game-card-price {
   color: #A4A4A4;
+}
+
+@media (min-width: 601px) {
+  .cart__game-card-name {
+    font-size: 1.25rem;
+  }
 }

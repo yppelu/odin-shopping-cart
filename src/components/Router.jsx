@@ -7,6 +7,7 @@ import CartPage from '../pages/CartPage/CartPage.jsx';
 import CheckoutPage from '../pages/CheckoutPage/CheckoutPage.jsx';
 import GamesPage from '../pages/GamesPage/GamesPage.jsx';
 import GamesPageMainSection from './GamesPageMainSection/GamesPageMainSection.jsx';
+import GamePage from '../pages/GamePage/GamePage.jsx';
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -36,6 +37,10 @@ export default function Router() {
               element: <GamesPageMainSection />
             }
           ]
+        },
+        {
+          path: '/games/game/:gameId',
+          element: <GamePage />
         }
       ]
     }

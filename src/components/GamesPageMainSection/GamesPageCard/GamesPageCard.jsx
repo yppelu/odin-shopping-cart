@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './GamesPageCard.css';
 
 import { platformIcons } from './platformIcons';
+import AddGameToCartButton from '../../AddGameToCartButton/AddGameToCartButton';
 
 export default function GamesPageCard({ id, imageSrc, name, platforms, price, gamesInCart, addGameToCart, removeGameFromCart }) {
   const platformsWithoutDuplicates = () => {
@@ -27,31 +29,17 @@ export default function GamesPageCard({ id, imageSrc, name, platforms, price, ga
 
   return (
     <div className='games-page__game-card'>
-      <img className='games-page__game-card-image' src={imageSrc} alt='Game screenshot' aria-hidden />
+      <Link to={`/games/game/${id}`}>
+        <img className='games-page__game-card-image' src={imageSrc} alt='Game screenshot' aria-hidden />
+      </Link>
       <div className='games-page__game-card-description'>
         <div className='games-page__game-card-shopping-block'>
-          <button
-            className={
-              isGameInCart
-                ? 'games-page__add-to-cart-button games-page__add-to-cart-button--game-in-cart'
-                : 'games-page__add-to-cart-button'
-            }
-            type='button'
-            onClick={() => {
-              if (isGameInCart) {
-                removeGameFromCart(id);
-              } else {
-                addGameToCart(id);
-              }
-            }
-            }
-          >
-            {
-              isGameInCart
-                ? 'Added ✔'
-                : 'Add to cart +'
-            }
-          </button>
+          <AddGameToCartButton
+            gameId={id}
+            isGameInCart={isGameInCart}
+            removeGameFromCart={removeGameFromCart}
+            addGameToCart={addGameToCart}
+          />
           <p>${price}</p>
         </div>
         <div className='games-page__game-card-platforms-container'>
@@ -67,7 +55,9 @@ export default function GamesPageCard({ id, imageSrc, name, platforms, price, ga
             ))
           }
         </div>
-        <h2 className='games-page__game-card-title'>{name}</h2>
+        <Link to={`/games/game/${id}`}>
+          <h2 className='games-page__game-card-title'>{name}</h2>
+        </Link>
       </div>
     </div>
   );

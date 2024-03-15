@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 
 import './CartGameCart.css';
+import { Link } from 'react-router-dom';
 
 export default function CartGameCart({ id, imageSrc, name, price, removeGameFromCart }) {
   return (
     <div className='cart__game-card'>
-      <img className='cart__game-card-image' src={imageSrc} alt='' aria-hidden />
+      <Link className='cart__game-card-image-link' to={`/games/game/${id}`}>
+        <img className='cart__game-card-image' src={imageSrc} alt='' aria-hidden />
+      </Link>
       <div className='cart__game-card-description'>
-        <p className='cart__game-card-name'>{name}</p>
+        <Link className='cart__game-card-name' to={`/games/game/${id}`}>{name}</Link>
         <p className='cart__game-card-price'>${price}</p>
       </div>
       <button
