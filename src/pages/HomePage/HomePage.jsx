@@ -1,6 +1,6 @@
 import './HomePage.css';
 
-import HomePageNavigation from '../../components/HomePageNavigation/HomePageNavigation';
+import HomePageNavigation from '../../components/HomePageNavigation/HomePageNavigation.jsx';
 
 export default function HomePage() {
   document.title = 'Home | Game Database';

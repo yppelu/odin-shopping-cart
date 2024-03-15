@@ -30,7 +30,7 @@ export default function AddGameToCartButton({ gameId, isGameInCart, removeGameFr
 }
 
 AddGameToCartButton.propTypes = {
-  gameId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  gameId: PropTypes.number,
   isGameInCart: PropTypes.bool,
   removeGameFromCart: PropTypes.func,
   addGameToCart: PropTypes.func

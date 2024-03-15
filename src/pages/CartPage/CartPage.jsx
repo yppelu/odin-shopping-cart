@@ -26,7 +26,7 @@ export default function CartPage() {
         const results = await Promise.all(responses.map(response => response.json()));
         const games = results.map(result => {
           return {
-            id: result.id,
+            id: Number(result.id),
             imageSrc: result.background_image,
             name: result.name,
             price: getGamePrice(result.slug)

@@ -9,13 +9,21 @@ import AddGameToCartButton from '../../components/AddGameToCartButton/AddGameToC
 export default function GamePage() {
   const { gameId } = useParams();
   const { handleAddGameToCart, handleRemoveGameFromCart, gamesInCart } = useOutletContext();
-  const isGameInCart = gamesInCart.includes(gameId);
+  const isGameInCart = gamesInCart.includes(Number(gameId));
 
   const [game, setGame] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
+    const formatData = (string) => {
+      const date = new Date(string);
+      const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.getMonth()];
+      const day = date.getDate();
+      const year = date.getFullYear();
+      return `${month} ${day}, ${year}`;
+    };
+
     const getGameData = async () => {
       setIsLoading(true);
 
@@ -31,10 +39,11 @@ export default function GamePage() {
           description: gameDataResult.description,
           developers: gameDataResult.developers.map(el => el.name),
           genres: gameDataResult.genres.map(el => el.name),
+          metacritic: gameDataResult.metacritic,
           name: gameDataResult.name,
           platforms: gameDataResult.platforms.map(el => el.platform.name),
           publishers: gameDataResult.publishers.map(el => el.name),
-          releaseDate: gameDataResult.released,
+          releaseDate: gameDataResult.released ? formatData(gameDataResult.released) : null,
           screenshotsSrcs: gameScreenshotsResult.results.map(el => el.image)
         };
 
@@ -129,26 +138,48 @@ export default function GamePage() {
             >
             </div>
             <div className='game-page__additional-info'>
-              <div>
-                <p className='game-page__additional-info-subtitle'>Platforms</p>
-                <p>{game.platforms && game.platforms.join(', ')}</p>
-              </div>
-              <div>
-                <p className='game-page__additional-info-subtitle'>Genres</p>
-                <p>{game.genres && game.genres.join(', ')}</p>
-              </div>
-              <div>
-                <p className='game-page__additional-info-subtitle'>Developers</p>
-                <p>{game.developers && game.developers.join(', ')}</p>
-              </div>
-              <div>
-                <p className='game-page__additional-info-subtitle'>Publishers</p>
-                <p>{game.publishers && game.publishers.join(', ')}</p>
-              </div>
-              <div>
-                <p className='game-page__additional-info-subtitle'>Release date</p>
-                <p>{game.releaseDate}</p>
-              </div>
+              {
+                game.platforms &&
+                <div>
+                  <p className='game-page__additional-info-subtitle'>Platforms</p>
+                  <p>{game.platforms.join(', ')}</p>
+                </div>
+              }
+              {
+                game.genres &&
+                <div>
+                  <p className='game-page__additional-info-subtitle'>Genres</p>
+                  <p>{game.genres.join(', ')}</p>
+                </div>
+              }
+              {
+                game.developers &&
+                <div>
+                  <p className='game-page__additional-info-subtitle'>Developers</p>
+                  <p>{game.developers.join(', ')}</p>
+                </div>
+              }
+              {
+                game.publishers &&
+                <div>
+                  <p className='game-page__additional-info-subtitle'>Publishers</p>
+                  <p>{game.publishers.join(', ')}</p>
+                </div>
+              }
+              {
+                game.releaseDate &&
+                <div>
+                  <p className='game-page__additional-info-subtitle'>Release date</p>
+                  <p>{game.releaseDate}</p>
+                </div>
+              }
+              {
+                game.metacritic &&
+                <div>
+                  <p className='game-page__additional-info-subtitle'>Metascore</p>
+                  <p className='game-page__metascore-block'>{game.metacritic}</p>
+                </div>
+              }
             </div>
           </div>
         </section>

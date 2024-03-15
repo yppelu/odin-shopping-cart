@@ -28,8 +28,8 @@ export default function PopularIn2023Section({ addGameToCart, removeGameFromCart
             listOfGames.map(game => (
               !game.background_image ? null :
                 <GamesPageCard
-                  key={game.id}
-                  id={game.id}
+                  key={Number(game.id)}
+                  id={Number(game.id)}
                   imageSrc={game.background_image}
                   name={game.name}
                   platforms={game.platforms.map(el => el.platform.slug)}
