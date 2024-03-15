@@ -25,24 +25,6 @@
   display: none;
 }
 
-.header__search-input {
-  background-color: var(--secondary-background-color);
-  border-radius: 2rem;
-  color: #A4A4A4;
-  transition: background-color var(--transition-duration) var(--transition-type),
-    color var(--transition-duration) var(--transition-type);
-
-  border: none;
-  padding: 0.5rem 1rem;
-  width: 50%;
-}
-
-.header__search-input:focus {
-  background-color: #FFFFFF;
-  color: #000000;
-  outline: none;
-}
-
 .header__view-cart-link {
   transition: transform var(--transition-duration) var(--transition-type);
   position: relative;

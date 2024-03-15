@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './Header.css';
+import SearchForm from './SearchForm/SearchForm';
 
 export default function Header({ numberOfGamesInCart }) {
   return (
@@ -19,7 +20,7 @@ export default function Header({ numberOfGamesInCart }) {
         </svg>
         <span className='header__home-link-text' aria-hidden>Game Database</span>
       </Link>
-      <input className='header__search-input' placeholder='Search games...' />
+      <SearchForm />
       <Link className='header__view-cart-link' to='/cart'>
         {
           numberOfGamesInCart > 0
