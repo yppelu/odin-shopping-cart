@@ -30,8 +30,12 @@ export default function SearchForm() {
             price: getGamePrice(game.slug)
           }
         )).filter(game => game.imageSrc);
-        setListOfGames(games);
-        setIsError(false);
+        if (games.length === 0) {
+          setIsError(true);
+        } else {
+          setListOfGames(games);
+          setIsError(false);
+        }
       } catch (error) {
         setIsError(true);
       } finally {
