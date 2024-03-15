@@ -13,7 +13,7 @@ export default function HomePage() {
           <div className='home-page__description-container'>
             <h1 className='home-page__title'>Game Database</h1>
             <p>
-              It is not a commercial project, but a solution to one of <a className='home-page__link-in-description' href='https://www.theodinproject.com/' target='_blank' rel='noreferrer'>The Odin Project</a> solutions.
+              It is not a commercial project, but a solution to one of <a className='home-page__link-in-description' href='https://www.theodinproject.com/' target='_blank' rel='noreferrer'>The Odin Project</a> assignments.
               You cannot buy any games here and all of the prices are generated to imitate a real game shop.
               <br />But feel free to poke around, there are plenty of things.
             </p>
