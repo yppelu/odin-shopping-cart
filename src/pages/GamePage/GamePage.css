@@ -76,6 +76,8 @@
 .game-page__carousel-image {
   object-fit: cover;
 
+  flex-shrink: 0;
+
   max-height: 400px;
   width: 100%;
 }
@@ -107,8 +109,8 @@
 }
 
 .game-page__additional-info-subtitle {
-  font-size: 1.05rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .game-page__metascore-block {

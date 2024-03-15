@@ -88,7 +88,7 @@ export default function GamePage() {
         <div className='game-page__header'>
           <h1 className='game-page__title'>{game.name}</h1>
           <AddGameToCartButton
-            gameId={gameId}
+            gameId={Number(gameId)}
             isGameInCart={isGameInCart}
             removeGameFromCart={handleRemoveGameFromCart}
             addGameToCart={handleAddGameToCart}
