@@ -33,7 +33,7 @@ AddGameToCartButton.propTypes = {
   gameId: PropTypes.number,
   imageSrc: PropTypes.string,
   name: PropTypes.string,
-  price: PropTypes.number,
+  price: PropTypes.string,
   isGameInCart: PropTypes.bool,
   removeGameFromCart: PropTypes.func,
   addGameToCart: PropTypes.func

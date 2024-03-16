@@ -21,7 +21,7 @@ export default function CartGameCart({ id, imageSrc, name, price, removeGameFrom
           removeGameFromCart(id);
         }}
       >
-        X
+        ⨉
       </button>
     </div>
   );
