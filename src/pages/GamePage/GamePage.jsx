@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import './GamePage.css';
 
+import getGamePrice from '../../components/GamesPageMainSection/sections/getGamePrice.js';
 import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator.jsx';
 import AddGameToCartButton from '../../components/AddGameToCartButton/AddGameToCartButton.jsx';
 
@@ -42,6 +43,7 @@ export default function GamePage() {
           metacritic: gameDataResult.metacritic,
           name: gameDataResult.name,
           platforms: gameDataResult.platforms.map(el => el.platform.name),
+          price: getGamePrice(gameDataResult.slug),
           publishers: gameDataResult.publishers.map(el => el.name),
           releaseDate: gameDataResult.released ? formatData(gameDataResult.released) : null,
           screenshotsSrcs: gameScreenshotsResult.results.map(el => el.image)
@@ -87,12 +89,15 @@ export default function GamePage() {
       <main className='game-page'>
         <div className='game-page__header'>
           <h1 className='game-page__title'>{game.name}</h1>
-          <AddGameToCartButton
-            gameId={Number(gameId)}
-            isGameInCart={isGameInCart}
-            removeGameFromCart={handleRemoveGameFromCart}
-            addGameToCart={handleAddGameToCart}
-          />
+          <div className='game-page__add-to-cart-container'>
+            <p>${game.price}</p>
+            <AddGameToCartButton
+              gameId={Number(gameId)}
+              isGameInCart={isGameInCart}
+              removeGameFromCart={handleRemoveGameFromCart}
+              addGameToCart={handleAddGameToCart}
+            />
+          </div>
         </div>
         <section className='game-page__images-section'>
           <div className='game-page__images-section-navigation-buttons'>

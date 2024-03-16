@@ -38,6 +38,16 @@
   font-weight: 700;
 }
 
+.game-page__add-to-cart-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.game-page__add-to-cart-container>p {
+  font-weight: 500;
+}
+
 .game-page__images-section {
   border-radius: 1rem;
   overflow: hidden;

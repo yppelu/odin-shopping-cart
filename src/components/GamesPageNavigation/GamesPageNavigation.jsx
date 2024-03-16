@@ -6,6 +6,11 @@ import GamesPageNavigationSection from './GamesPageNavigationSection/GamesPageNa
 
 export default function GamesPageNavigation() {
   const [isMenuHidden, setIsMenuHidden] = useState(window.screen.width <= 600);
+
+  function handleHideMenu() {
+    setIsMenuHidden(true);
+  }
+
   return (
     <nav
       className={
@@ -34,6 +39,7 @@ export default function GamesPageNavigation() {
             key={section.title}
             title={section.title}
             listItems={section.listItems}
+            hideMenu={handleHideMenu}
           />
         ))
       }

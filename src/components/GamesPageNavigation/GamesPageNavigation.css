@@ -1,6 +1,5 @@
 .games-page__navigation {
   background-color: var(--secondary-background-color);
-  border-radius: 1rem;
   overflow: auto;
 
   display: flex;
@@ -8,14 +7,20 @@
   gap: 1.5rem;
 
   position: fixed;
-  top: 2rem;
-  bottom: 2rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
 
   padding: 1rem;
 }
 
 .games-page__navigation-button {
   background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   border: none;
   margin-bottom: -1rem;
@@ -33,7 +38,18 @@
 }
 
 .games-page__navigation-button--menu-hidden {
+  background-color: #FFFFFF;
+  border-radius: 2rem;
   visibility: visible;
+
+  position: absolute;
+  bottom: 2rem;
+  right: 1rem;
+}
+
+.games-page__navigation-button--menu-hidden>svg {
+  fill: #000000;
+  height: 85%;
 }
 
 @media (min-width: 601px) {

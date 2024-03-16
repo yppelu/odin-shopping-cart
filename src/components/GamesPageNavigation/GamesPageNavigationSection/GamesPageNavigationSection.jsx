@@ -4,7 +4,7 @@ import './GamesPageNavigationSection.css';
 
 import GamesPageNavigationListItem from './GamesPageNavigationListItem/GamesPageNavigationListItem.jsx';
 
-export default function GamesPageNavigationSection({ title, listItems }) {
+export default function GamesPageNavigationSection({ title, listItems, hideMenu }) {
   return (
     <div className='games-page__navigation-section'>
       <h2 className='games-page__navigation-section-title'>
@@ -17,6 +17,7 @@ export default function GamesPageNavigationSection({ title, listItems }) {
               key={listItem.title}
               title={listItem.title}
               icon={listItem.icon}
+              hideMenu={hideMenu}
             />
           ))
         }
@@ -27,5 +28,6 @@ export default function GamesPageNavigationSection({ title, listItems }) {
 
 GamesPageNavigationSection.propTypes = {
   title: PropTypes.string,
-  listItems: PropTypes.array
+  listItems: PropTypes.array,
+  hideMenu: PropTypes.func
 };
