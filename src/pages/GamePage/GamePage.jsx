@@ -10,7 +10,7 @@ import AddGameToCartButton from '../../components/AddGameToCartButton/AddGameToC
 export default function GamePage() {
   const { gameId } = useParams();
   const { handleAddGameToCart, handleRemoveGameFromCart, gamesInCart } = useOutletContext();
-  const isGameInCart = gamesInCart.includes(Number(gameId));
+  const isGameInCart = gamesInCart.map(game => game.id).includes(Number(gameId));
 
   const [game, setGame] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -93,6 +93,9 @@ export default function GamePage() {
             <p>${game.price}</p>
             <AddGameToCartButton
               gameId={Number(gameId)}
+              imageSrc={game.backgroundImageSrc}
+              name={game.name}
+              price={game.price}
               isGameInCart={isGameInCart}
               removeGameFromCart={handleRemoveGameFromCart}
               addGameToCart={handleAddGameToCart}

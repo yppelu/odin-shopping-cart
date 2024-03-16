@@ -25,7 +25,7 @@ export default function GamesPageCard({ id, imageSrc, name, platforms, price, ga
   };
 
   const clearedPlatforms = platformsWithoutDuplicates();
-  const isGameInCart = gamesInCart.includes(id);
+  const isGameInCart = gamesInCart.map(game => game.id).includes(id);
 
   return (
     <div className='games-page__game-card'>
@@ -36,6 +36,9 @@ export default function GamesPageCard({ id, imageSrc, name, platforms, price, ga
         <div className='games-page__game-card-shopping-block'>
           <AddGameToCartButton
             gameId={id}
+            imageSrc={imageSrc}
+            name={name}
+            price={price}
             isGameInCart={isGameInCart}
             removeGameFromCart={removeGameFromCart}
             addGameToCart={addGameToCart}

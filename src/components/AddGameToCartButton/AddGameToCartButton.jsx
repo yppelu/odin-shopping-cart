@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import './AddGameToCartButton.css';
 
-export default function AddGameToCartButton({ gameId, isGameInCart, removeGameFromCart, addGameToCart }) {
+export default function AddGameToCartButton({ gameId, imageSrc, name, price, isGameInCart, removeGameFromCart, addGameToCart }) {
   return (
     <button
       className={
@@ -15,7 +15,7 @@ export default function AddGameToCartButton({ gameId, isGameInCart, removeGameFr
         if (isGameInCart) {
           removeGameFromCart(gameId);
         } else {
-          addGameToCart(gameId);
+          addGameToCart(gameId, imageSrc, name, price);
         }
       }
       }
@@ -31,6 +31,9 @@ export default function AddGameToCartButton({ gameId, isGameInCart, removeGameFr
 
 AddGameToCartButton.propTypes = {
   gameId: PropTypes.number,
+  imageSrc: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.number,
   isGameInCart: PropTypes.bool,
   removeGameFromCart: PropTypes.func,
   addGameToCart: PropTypes.func

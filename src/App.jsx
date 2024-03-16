@@ -6,16 +6,20 @@ import { useState } from 'react';
 export default function App() {
   const [gamesInCart, setGamesInCart] = useState(JSON.parse(localStorage.getItem('gamesInCart')));
 
-  function handleAddGameToCart(id) {
+  function handleAddGameToCart(id, imageSrc, name, price) {
     const newGamesInCart = [...gamesInCart];
-    newGamesInCart.push(Number(id));
+    const newGame = { id, imageSrc, name, price };
+    newGamesInCart.push(newGame);
     localStorage.setItem('gamesInCart', JSON.stringify(newGamesInCart));
     setGamesInCart(newGamesInCart);
   }
 
   function handleRemoveGameFromCart(id) {
     const newGamesInCart = [...gamesInCart];
-    const index = gamesInCart.indexOf(Number(id));
+    let index;
+    gamesInCart.forEach((game, i) => {
+      if (game.id === Number(id)) index = i;
+    });
     newGamesInCart.splice(index, 1);
     localStorage.setItem('gamesInCart', JSON.stringify(newGamesInCart));
     setGamesInCart(newGamesInCart);
