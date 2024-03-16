@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './HomePageNavigationListItem.css';
 
-export default function HomePageNavigationListItem({ title, icon }) {
-  const href = title.split(' ').map(word => word.toLowerCase()).join('-');
-
+export default function HomePageNavigationListItem({ title, href, icon }) {
   return (
     <li className='home-page__navigation-list-item'>
       <Link className='home-page__navigation-link' to={`/games/${href}`}>
@@ -18,5 +16,6 @@ export default function HomePageNavigationListItem({ title, icon }) {
 
 HomePageNavigationListItem.propTypes = {
   title: PropTypes.string,
+  href: PropTypes.string,
   icon: PropTypes.node
 };

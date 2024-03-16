@@ -8,6 +8,7 @@ import CheckoutPage from '../pages/CheckoutPage/CheckoutPage.jsx';
 import GamesPage from '../pages/GamesPage/GamesPage.jsx';
 import GamesPageMainSection from './GamesPageMainSection/GamesPageMainSection.jsx';
 import GamePage from '../pages/GamePage/GamePage.jsx';
+import AllGamesSection from './GamesPageMainSection/sections/AllGamesSection.jsx';
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -32,6 +33,10 @@ export default function Router() {
           path: '/games',
           element: <GamesPage />,
           children: [
+            {
+              index: true,
+              element: <AllGamesSection />
+            },
             {
               path: '/games/:sectionName',
               element: <GamesPageMainSection />

@@ -10,7 +10,7 @@ export default function HomePageNavigation() {
       <ul className='home-page__navigation-list'>
         {
           homePageNavigationButtons.map(button => (
-            <HomePageNavigationListItem key={button.title} title={button.title} icon={button.icon} />
+            <HomePageNavigationListItem key={button.title} title={button.title} href={button.href} icon={button.icon} />
           ))
         }
       </ul>

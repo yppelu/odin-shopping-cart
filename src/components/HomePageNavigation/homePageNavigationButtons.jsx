@@ -1,6 +1,19 @@
 export const homePageNavigationButtons = [
   {
+    title: 'All Games',
+    href: '',
+    icon:
+      <svg
+        className='home-page__navigation-link-icon'
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 24 24'
+      >
+        <path d='M9,5V9H21V5M9,19H21V15H9M9,14H21V10H9M4,9H8V5H4M4,19H8V15H4M4,14H8V10H4V14Z' />
+      </svg>
+  },
+  {
     title: 'Last 30 Days',
+    href: 'last-30-days',
     icon:
       <svg
         className='home-page__navigation-link-icon'
@@ -12,6 +25,7 @@ export const homePageNavigationButtons = [
   },
   {
     title: 'Popular in 2023',
+    href: 'popular-in-2023',
     icon:
       <svg
         className='home-page__navigation-link-icon'
@@ -23,6 +37,7 @@ export const homePageNavigationButtons = [
   },
   {
     title: 'Best of the Year',
+    href: 'best-of-the-year',
     icon:
       <svg
         className='home-page__navigation-link-icon'
@@ -34,6 +49,7 @@ export const homePageNavigationButtons = [
   },
   {
     title: 'All Time Top',
+    href: 'all-time-top',
     icon:
       <svg
         className='home-page__navigation-link-icon'

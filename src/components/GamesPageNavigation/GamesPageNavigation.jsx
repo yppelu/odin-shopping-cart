@@ -3,12 +3,15 @@ import './GamesPageNavigation.css';
 
 import { gamesPageNavigationControls } from './gamesPageNavigationControls.jsx';
 import GamesPageNavigationSection from './GamesPageNavigationSection/GamesPageNavigationSection.jsx';
+import { Link } from 'react-router-dom';
 
 export default function GamesPageNavigation() {
   const [isMenuHidden, setIsMenuHidden] = useState(window.screen.width <= 600);
 
   function handleHideMenu() {
-    setIsMenuHidden(true);
+    if (window.screen.width <= 600) {
+      setIsMenuHidden(true);
+    }
   }
 
   return (
@@ -33,6 +36,9 @@ export default function GamesPageNavigation() {
           <path d='M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z' />
         </svg>
       </button>
+      <Link className='games-page__all-games-link' to='/games' >
+        All Games
+      </Link>
       {
         gamesPageNavigationControls.map(section => (
           <GamesPageNavigationSection
