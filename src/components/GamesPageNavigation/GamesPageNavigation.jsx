@@ -36,7 +36,7 @@ export default function GamesPageNavigation() {
           <path d='M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z' />
         </svg>
       </button>
-      <Link className='games-page__all-games-link' to='/games' >
+      <Link className='games-page__all-games-link' to='/games' onClick={handleHideMenu}>
         All Games
       </Link>
       {
